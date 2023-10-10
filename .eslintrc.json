@@ -1,0 +1,32 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "prettier/@typescript-eslint",
+        "prettier/prettier",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": ["@typescript-eslint", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "prettier/prettier": ["error", { "endOfLine": "auto" }], // 라인 종료 규칙 설정
+        "no-tabs": ["error", { "allowIndentationTabs": true }], // 탭 사용 금지, 들여쓰기에만 허용
+        "@typescript-eslint/explicit-function-return-type": "off", // 함수 반환 타입 명시 규칙 해제
+        "@typescript-eslint/explicit-module-boundary-types": "off", // 모듈 경계 타입 명시 규칙 해제
+        "@typescript-eslint/no-explicit-any": "off", // any 타입 사용 금지 규칙 해제
+        "@typescript-eslint/no-empty-function": "off", // 빈 함수 금지 규칙 해제
+        "@typescript-eslint/no-this-alias": [
+            "error",
+            {
+                "allowDestructuring": true, // this 비구조화 할당 허용 설정
+                "allowedNames": ["passThis"] // 'passThis'라는 이름으로 this alias 사용 허용
+            }
+        ]
+    }
+}
